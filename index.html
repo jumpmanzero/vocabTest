@@ -6,8 +6,16 @@
   <script type="text/javascript">
     function DoTest()
     {
-      alert("HELLO WORLD");
+        var reader = new FileReader();
+        reader.onload = FinishedReading;          
+        reader.readAsText("testing.csv");
     }
+    
+    function FinishedReading(o)
+    {
+      console.log(o);
+    }
+    
   </script>
   
 </div>
