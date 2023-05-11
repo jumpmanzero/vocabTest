@@ -1,22 +1,26 @@
 <div>
-  This is a test HTM file for github pages V6
+  This is a test HTM file for github pages V7
   
   <button onclick="DoTest()">HELLO</button>
   
   <script type="text/javascript">
+
+    var txtFile = new XMLHttpRequest();
+    
     function DoTest()
     {
-      var txtFile = new XMLHttpRequest();
       txtFile.open("GET", "testing.csv", true);
-      txtFile.onreadystatechange = function() {
-        if (txtFile.readyState === 4) { 
-          if (txtFile.status === 200) { 
+      txtFile.onreadystatechange = ShowFile
+    }
+    
+    function ShowFile(r)
+    {
+        if (r.readyState === 4 && r.status === 200) { 
             var allText = txtFile.responseText;
             console.log(allText);
-          }
-        }   
-       }    
+       }        
     }
+    
         
   </script>
   
