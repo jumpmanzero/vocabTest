@@ -1,5 +1,5 @@
 <div>
-  This is a test HTM file for github pages V7
+  This is a test HTM file for github pages V8
   
   <button onclick="DoTest()">HELLO</button>
   
@@ -10,7 +10,8 @@
     function DoTest()
     {
       txtFile.open("GET", "testing.csv", true);
-      txtFile.onreadystatechange = ShowFile
+      txtFile.onreadystatechange = ShowFile;
+      txtFile.send();
     }
     
     function ShowFile(r)
