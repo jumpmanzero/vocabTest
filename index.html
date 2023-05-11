@@ -1,5 +1,5 @@
 <div>
-  This is a test HTM file for github pages V4
+  This is a test HTM file for github pages V5
   
   <button onclick="DoTest()">HELLO</button>
   
@@ -8,11 +8,13 @@
     {
       var txtFile = new XMLHttpRequest();
       txtFile.open("GET", "testing.csv", true);
-      txtFile.onreadystatechange = function() {
-         allText = txtFile.responseText;
-         console.log(allText);
+      if (txtFile.readyState === 4) { 
+        if (txtFile.status === 200) { 
+          allText = txtFile.responseText;
+          console.log(allText);
         }
-    }    
+      }
+   }    
         
   </script>
   
